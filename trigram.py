@@ -21,6 +21,11 @@ def count(st,text):
 			if(fg == 0):
 				cn=cn+1
 	return cn
+def totalvocab(text):
+    words=text.read()
+    return len(set(words.split()))
+
+
 print('Prediction of occurence of word in a given trigram')
 val = input('Enter the sentence\n')
 words = val.split(' ')
@@ -40,6 +45,7 @@ print(word_space)
 text=open('transcript.txt','r')
 st=[]
 res=1.000
+v= totalvocab(text)
 st.append(word_space[0].lower())
 st.append(word_space[1].lower())
 for i in range(2,len(word_space)):
@@ -50,11 +56,8 @@ for i in range(2,len(word_space)):
 	text=open('transcript.txt','r')
 	tmp=text
 	k1=count(st,tmp)
-	if(k1==0 or k == 0):
-		res=0
-		break
-	print(k1,k)
-	ans=k1/k
+	#print(k1,k)
+	ans=(k1+1)/(k+v)
 	res=res*ans
 	st.pop(0)
 #print(words)
