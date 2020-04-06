@@ -1,4 +1,4 @@
-# 3gramRestaurant
+# TrigramRestaurant
 
 Probability of a sentence to occur in the given restaurant corpus('transcript.txt') using trigram model.
 Trigram model with laplacian add one smoothing-P(w1,n) = P(w1) P(w2|w1) P(w3|w1,2) ... P(wn|w1,n-1). 
